@@ -35,7 +35,7 @@ static EnemyEntry enemySpawnTable[RANDOMIZED_ENEMY_SPAWN_TABLE_SIZE] = {
     { ACTOR_EN_SB, 0 },       // Shellblade
     { ACTOR_EN_KAREBABA, 0 }, // Wilted Baba
     { ACTOR_EN_RR, 0 },       // Like Like
-    //{ ACTOR_EN_IK, 0 },       // Iron Knuckle
+    { ACTOR_EN_IK, 1 },       // Iron Knuckle
     { ACTOR_EN_TUBO_TRAP, 0 }, // Flying Pot Trap
     { ACTOR_EN_FZ, 0 },        // Freezard
     { ACTOR_EN_WF, 0 },        // Wolfos
