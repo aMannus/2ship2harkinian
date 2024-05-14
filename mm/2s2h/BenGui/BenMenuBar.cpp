@@ -439,6 +439,8 @@ void DrawEnhancementsMenu() {
             })) {
                 UpdatePlayAsKafeiSkeletons();
             }
+            UIWidgets::CVarCheckbox("Chaos Mode", "gEnhancements.Modes.ChaosMode");
+
             ImGui::EndMenu();
         }
 

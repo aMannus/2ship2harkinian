@@ -34,5 +34,6 @@ void InitEnhancements() {
     
     // Modes
     RegisterPlayAsKafei();
+    RegisterChaosMode();
 
 }
