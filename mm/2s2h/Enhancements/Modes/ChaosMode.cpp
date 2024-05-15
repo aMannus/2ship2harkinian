@@ -87,12 +87,21 @@ void ChaosSpawnEnemy() {
     Actor* spawnedActor = Actor_Spawn(&gPlayState->actorCtx, gPlayState, randomEnemy.id, pos.x, pos.y, pos.z, 0, 0, 0,
                                       randomEnemy.params);
 
+    gPlayState->actorCtx.actorLists[spawnedActor->category].unk_08 = 1;
     spawnedActor->category = ACTORCAT_BG;
 }
 
 void RegisterChaosMode() {
     GameInteractor::Instance->RegisterGameHook<GameInteractor::OnGameStateUpdate>([]() {
+
         if (!CVarGetInteger("gEnhancements.Modes.ChaosMode", 0) || gPlayState == NULL) {
+            return;
+        }
+
+        Player* player = GET_PLAYER(gPlayState);
+
+        if (Player_InBlockingCsMode(gPlayState, player) || gPlayState->pauseCtx.state != 0 ||
+            gPlayState->msgCtx.msgMode != 0) {
             return;
         }
 
